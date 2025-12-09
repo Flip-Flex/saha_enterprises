@@ -27,7 +27,7 @@ const services = [
 
 export const ServicesSummary: React.FC = () => {
     return (
-        <section id="services" className="py-24 relative bg-black">
+        <section id="services" className="py-24 relative bg-transparent">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2

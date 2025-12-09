@@ -8,6 +8,7 @@ import { DieCastingFeature } from '@/components/ui/die-casting-feature';
 import { ClientNetwork } from '@/components/ui/client-network';
 import { ContactSection } from '@/components/ui/contact-section';
 import { AboutSection } from '@/components/ui/about-section';
+import { FloatingPaths } from '@/components/ui/background-paths';
 
 function App() {
   console.log("Saha Enterprises - Full Site v1.1");
@@ -35,39 +36,51 @@ function App() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Key Stats */}
-      <KeyStats />
+      {/* Main Content with Animated Background */}
+      <div className="relative w-full overflow-hidden bg-transparent">
+        {/* Animated Background Layer */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <FloatingPaths position={1} />
+          <FloatingPaths position={-1} />
+        </div>
 
-      {/* About Section */}
-      <AboutSection />
+        {/* Content Layer */}
+        <div className="relative z-10">
+          {/* Key Stats */}
+          <KeyStats />
 
-      {/* Services Section */}
-      <ServicesSummary />
+          {/* About Section */}
+          <AboutSection />
 
-      <div id="sectors">
-        {/* Industries Section */}
-        <Industries />
+          {/* Services Section */}
+          <ServicesSummary />
 
-        {/* New Mobile Manufacturing Section */}
-        <MobileManufacturing />
+          <div id="sectors">
+            {/* Industries Section */}
+            <Industries />
 
-        {/* New Die Casting Section */}
-        <DieCastingFeature />
+            {/* New Mobile Manufacturing Section */}
+            <MobileManufacturing />
+
+            {/* New Die Casting Section */}
+            <DieCastingFeature />
+          </div>
+
+          <div id="network">
+            {/* New Client Network (Give/Ask) Section */}
+            <ClientNetwork />
+          </div>
+
+          {/* Success Story */}
+          <SuccessStory />
+
+          {/* Contact Section */}
+          <ContactSection />
+        </div>
       </div>
-
-      <div id="network">
-        {/* New Client Network (Give/Ask) Section */}
-        <ClientNetwork />
-      </div>
-
-      {/* Success Story */}
-      <SuccessStory />
-
-      {/* Contact Section */}
-      <ContactSection />
 
       {/* Footer */}
-      <footer className="py-8 bg-black border-t border-white/10 text-center text-slate-600 text-sm">
+      <footer className="py-8 bg-black border-t border-white/10 text-center text-slate-600 text-sm relative z-20">
         <p>&copy; 2024 Saha Enterprises. All rights reserved.</p>
       </footer>
     </div>

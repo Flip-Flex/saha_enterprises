@@ -13,7 +13,7 @@ const industries = [
 
 export const Industries: React.FC = () => {
     return (
-        <section id="industries" className="py-24 bg-zinc-900 border-t border-white/5">
+        <section id="industries" className="py-24 bg-transparent border-t border-white/5">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
