@@ -203,7 +203,7 @@ const Lightning: React.FC<LightningProps> = ({
         };
     }, [hue, xOffset, speed, intensity, size]);
 
-    return <canvas ref={canvasRef} className="w-full h-full relative" />;
+    return <canvas ref={canvasRef} className="w-full h-full relative" style={{ mixBlendMode: 'screen' }} />;
 };
 
 export const HeroSection: React.FC = () => {
