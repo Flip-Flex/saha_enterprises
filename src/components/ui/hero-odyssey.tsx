@@ -304,8 +304,10 @@ export const HeroSection: React.FC = () => {
                     />
                 </div>
 
-                {/* Planet/sphere */}
-                <div className="z-10 absolute top-[55%] left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] backdrop-blur-3xl rounded-full bg-[radial-gradient(circle_at_25%_90%,_#4c0519_5%,_#000000de_40%,_#000000ed_100%)]"></div>
+                {/* Red Globe */}
+                <div className="z-10 absolute top-[60%] left-1/2 transform -translate-x-1/2 w-[1200px] h-[1200px] rounded-full bg-black border-t border-red-600/50 shadow-[0_-10px_100px_-20px_rgba(220,38,38,0.6)]">
+                    <div className="absolute inset-0 bg-gradient-to-b from-red-900/20 to-transparent rounded-full" />
+                </div>
             </div>
         </div>
     );
