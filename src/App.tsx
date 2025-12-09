@@ -3,10 +3,13 @@ import { KeyStats } from '@/components/ui/key-stats';
 import { ServicesSummary } from '@/components/ui/services-summary';
 import { Industries } from '@/components/ui/industries';
 import { SuccessStory } from '@/components/ui/success-story';
+import { MobileManufacturing } from '@/components/ui/mobile-manufacturing';
+import { DieCastingFeature } from '@/components/ui/die-casting-feature';
+import { ClientNetwork } from '@/components/ui/client-network';
 import { ContactSection } from '@/components/ui/contact-section';
 
 function App() {
-  console.log("Saha Enterprises - Red Theme v1.0");
+  console.log("Saha Enterprises - Full Site v1.0");
   return (
     <div className="bg-black min-h-screen text-slate-300 selection:bg-orange-500 selection:text-white">
       {/* Navigation */}
@@ -17,8 +20,8 @@ function App() {
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
             <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
-            <a href="#industries" className="hover:text-orange-400 transition-colors">Industries</a>
-            <a href="#about" className="hover:text-orange-400 transition-colors">About Us</a>
+            <a href="#sectors" className="hover:text-orange-400 transition-colors">Sectors</a>
+            <a href="#network" className="hover:text-orange-400 transition-colors">Network</a>
             <a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a>
             <button className="px-5 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 hover:bg-orange-500/20 transition-all">
               Get Started
@@ -36,8 +39,21 @@ function App() {
       {/* Services Section */}
       <ServicesSummary />
 
-      {/* Industries Section */}
-      <Industries />
+      <div id="sectors">
+        {/* Industries Section */}
+        <Industries />
+
+        {/* New Mobile Manufacturing Section */}
+        <MobileManufacturing />
+
+        {/* New Die Casting Section */}
+        <DieCastingFeature />
+      </div>
+
+      <div id="network">
+        {/* New Client Network (Give/Ask) Section */}
+        <ClientNetwork />
+      </div>
 
       {/* Success Story */}
       <SuccessStory />
