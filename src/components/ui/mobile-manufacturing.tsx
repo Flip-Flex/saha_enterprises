@@ -5,7 +5,7 @@ import mobileMfgImage from '@/assets/mobile-manufacturing.png';
 
 export const MobileManufacturing: React.FC = () => {
     return (
-        <section className="py-24 bg-zinc-950 relative overflow-hidden">
+        <section className="py-24 bg-transparent relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <motion.div

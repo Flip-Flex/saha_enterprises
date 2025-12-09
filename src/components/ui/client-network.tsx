@@ -30,7 +30,7 @@ export const ClientNetwork: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'give' | 'ask'>('give');
 
     return (
-        <section className="py-24 bg-zinc-900 border-t border-white/5 relative">
+        <section className="py-24 bg-transparent border-t border-white/5 relative">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

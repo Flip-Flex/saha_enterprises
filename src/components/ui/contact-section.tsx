@@ -5,7 +5,7 @@ import workersImage from '@/assets/workers.png';
 
 export const ContactSection: React.FC = () => {
     return (
-        <section id="contact" className="py-24 bg-zinc-900/50 border-t border-white/5 relative overflow-hidden">
+        <section id="contact" className="py-24 bg-transparent border-t border-white/5 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-orange-900/10 to-transparent pointer-events-none" />
 

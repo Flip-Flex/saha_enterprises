@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 
 export const SuccessStory: React.FC = () => {
     return (
-        <section className="py-24 relative overflow-hidden bg-black">
+        <section className="py-24 relative overflow-hidden bg-transparent">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-orange-900/10 to-red-900/10" />
 
