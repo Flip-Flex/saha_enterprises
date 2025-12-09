@@ -7,9 +7,10 @@ import { MobileManufacturing } from '@/components/ui/mobile-manufacturing';
 import { DieCastingFeature } from '@/components/ui/die-casting-feature';
 import { ClientNetwork } from '@/components/ui/client-network';
 import { ContactSection } from '@/components/ui/contact-section';
+import { AboutSection } from '@/components/ui/about-section';
 
 function App() {
-  console.log("Saha Enterprises - Full Site v1.0");
+  console.log("Saha Enterprises - Full Site v1.1");
   return (
     <div className="bg-black min-h-screen text-slate-300 selection:bg-orange-500 selection:text-white">
       {/* Navigation */}
@@ -19,6 +20,7 @@ function App() {
             Saha Enterprises
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+            <a href="#about" className="hover:text-orange-400 transition-colors">About Us</a>
             <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
             <a href="#sectors" className="hover:text-orange-400 transition-colors">Sectors</a>
             <a href="#network" className="hover:text-orange-400 transition-colors">Network</a>
@@ -35,6 +37,9 @@ function App() {
 
       {/* Key Stats */}
       <KeyStats />
+
+      {/* About Section */}
+      <AboutSection />
 
       {/* Services Section */}
       <ServicesSummary />
