@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/ui/hero-odyssey';
 import { Briefcase, Users, CheckCircle, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 function App() {
+  console.log("Saha Enterprises - v2.0 Hero Odyssey");
   return (
     <div className="bg-slate-950 min-h-screen text-slate-300 selection:bg-cyan-500 selection:text-white">
       {/* Navigation */}
