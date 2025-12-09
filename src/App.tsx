@@ -1,6 +1,5 @@
 
-import { LampContainer } from '@/components/ui/lamp';
-import { motion } from 'framer-motion';
+import { HeroSection } from '@/components/ui/hero-odyssey';
 import { Briefcase, Users, CheckCircle, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 function App() {
@@ -24,33 +23,7 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <LampContainer className="pt-20">
-        <motion.div
-          initial={{ opacity: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="flex flex-col items-center gap-6"
-        >
-          <h1 className="mt-8 bg-gradient-to-br from-slate-100 to-slate-400 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
-            Powering Your Business <br /> With The Right Talent
-          </h1>
-          <p className="max-w-2xl text-center text-slate-400 text-lg md:text-xl leading-relaxed">
-            Saha Enterprises serves as the bridge between exceptional talent and industry-leading organizations. We redefine recruitment with precision, speed, and reliability.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 mt-4">
-            <button className="px-8 py-4 rounded-full bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-all shadow-[0_0_40px_-10px_rgba(6,182,212,0.5)]">
-              Find Talent
-            </button>
-            <button className="px-8 py-4 rounded-full bg-transparent border border-slate-700 text-slate-300 font-medium hover:bg-slate-900 transition-all">
-              Find a Job
-            </button>
-          </div>
-        </motion.div>
-      </LampContainer>
+      <HeroSection />
 
       {/* Services Section */}
       <section id="services" className="py-24 relative overflow-hidden">
