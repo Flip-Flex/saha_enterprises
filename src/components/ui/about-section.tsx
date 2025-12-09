@@ -25,7 +25,7 @@ export const AboutSection: React.FC = () => {
                         <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <div className="text-3xl font-bold text-white">12+</div>
+                                    <div className="text-3xl font-bold text-white">4+</div>
                                     <div className="text-sm text-slate-300">Years Industry Experience</div>
                                 </div>
                                 <div className="h-10 w-[1px] bg-white/20" />
