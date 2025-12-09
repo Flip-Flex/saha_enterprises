@@ -189,7 +189,7 @@ const Lightning: React.FC<LightningProps> = ({
 
         const startTime = performance.now();
         const render = () => {
-            resizeCanvas();
+            // resizeCanvas() removed from here to prevent layout trashing
             gl.viewport(0, 0, canvas.width, canvas.height);
             gl.uniform2f(iResolutionLocation, canvas.width, canvas.height);
             const currentTime = performance.now();
