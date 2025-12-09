@@ -29,11 +29,14 @@ const Lightning: React.FC<LightningProps> = ({
         resizeCanvas();
         window.addEventListener("resize", resizeCanvas);
 
-        const gl = canvas.getContext("webgl");
+        const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: false });
         if (!gl) {
             console.error("WebGL not supported");
             return;
         }
+
+        gl.enable(gl.BLEND);
+        gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
         const vertexShaderSource = `
       attribute vec2 aPosition;
@@ -120,7 +123,10 @@ const Lightning: React.FC<LightningProps> = ({
           // Compute color with intensity and speed affecting time.
           vec3 col = baseColor * pow(mix(0.0, 0.07, hash11(iTime * uSpeed)) / dist, 1.0) * uIntensity;
           col = pow(col, vec3(1.0));
-          fragColor = vec4(col, 1.0);
+          
+          // Alpha calculation: Use brightness as alpha to keep black transparent
+          float alpha = max(col.r, max(col.g, col.b));
+          fragColor = vec4(col, alpha);
       }
 
       void main() {
@@ -203,7 +209,7 @@ const Lightning: React.FC<LightningProps> = ({
         };
     }, [hue, xOffset, speed, intensity, size]);
 
-    return <canvas ref={canvasRef} className="w-full h-full relative" style={{ mixBlendMode: 'screen' }} />;
+    return <canvas ref={canvasRef} className="w-full h-full relative" />;
 };
 
 export const HeroSection: React.FC = () => {
