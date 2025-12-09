@@ -10,28 +10,25 @@ import { ContactSection } from '@/components/ui/contact-section';
 import { AboutSection } from '@/components/ui/about-section';
 import { FloatingPaths } from '@/components/ui/background-paths';
 
+import { NavBar } from '@/components/ui/tubelight-navbar';
+import { Home, User, Briefcase, Layers, Network, Phone } from 'lucide-react';
+
 function App() {
   console.log("Saha Enterprises - Full Site v1.1");
+
+  const navItems = [
+    { name: 'Home', url: '#', icon: Home },
+    { name: 'About Us', url: '#about', icon: User },
+    { name: 'Services', url: '#services', icon: Briefcase },
+    { name: 'Sectors', url: '#sectors', icon: Layers },
+    { name: 'Network', url: '#network', icon: Network },
+    { name: 'Contact', url: '#contact', icon: Phone }
+  ];
+
   return (
     <div className="bg-black min-h-screen text-slate-300 selection:bg-orange-500 selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[100] backdrop-blur-md border-b border-white/5 bg-black/50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-br from-orange-400 to-red-600 bg-clip-text text-transparent">
-            Saha Enterprises
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-            <a href="#about" className="hover:text-orange-400 transition-colors">About Us</a>
-            <a href="#services" className="hover:text-orange-400 transition-colors">Services</a>
-            <a href="#sectors" className="hover:text-orange-400 transition-colors">Sectors</a>
-            <a href="#network" className="hover:text-orange-400 transition-colors">Network</a>
-            <a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a>
-            <button className="px-5 py-2 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 hover:bg-orange-500/20 transition-all">
-              Get Started
-            </button>
-          </div>
-        </div>
-      </nav>
+      <NavBar items={navItems} />
 
       {/* Hero Section */}
       <HeroSection />
