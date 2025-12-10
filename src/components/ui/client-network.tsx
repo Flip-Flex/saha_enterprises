@@ -30,7 +30,7 @@ export const ClientNetwork: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'give' | 'ask'>('give');
 
     return (
-        <section className="py-24 bg-transparent border-t border-white/5 relative">
+        <section className="py-24 bg-transparent border-t border-white/5 relative z-20">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -41,19 +41,25 @@ export const ClientNetwork: React.FC = () => {
                     </p>
 
                     {/* Tabs / Toggle */}
-                    <div className="inline-flex p-1 bg-black/50 rounded-full border border-white/10 relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 rounded-full transition-all duration-300 w-1/2"
-                            style={{ transform: activeTab === 'give' ? 'translateX(0%)' : 'translateX(100%)' }} />
+                    <div className="relative isolate inline-grid grid-cols-2 p-1 bg-black/50 rounded-full border border-white/10 w-full max-w-[360px] mx-auto">
+                        <div
+                            className="absolute inset-y-1 left-1 w-[calc(50%-4px)] bg-gradient-to-r from-orange-600 to-red-600 rounded-full transition-transform duration-300 z-0 shadow-lg"
+                            style={{
+                                transform: activeTab === 'give' ? 'translateX(0)' : 'translateX(100%)'
+                            }}
+                        />
 
                         <button
+                            type="button"
                             onClick={() => setActiveTab('give')}
-                            className={`relative z-10 px-8 py-3 rounded-full text-sm font-bold tracking-wide uppercase transition-colors ${activeTab === 'give' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
+                            className={`relative z-10 px-4 py-3 rounded-full text-sm font-bold tracking-wide uppercase transition-colors cursor-pointer select-none ${activeTab === 'give' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
                         >
                             GIVE (Supply)
                         </button>
                         <button
+                            type="button"
                             onClick={() => setActiveTab('ask')}
-                            className={`relative z-10 px-8 py-3 rounded-full text-sm font-bold tracking-wide uppercase transition-colors ${activeTab === 'ask' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
+                            className={`relative z-10 px-4 py-3 rounded-full text-sm font-bold tracking-wide uppercase transition-colors cursor-pointer select-none ${activeTab === 'ask' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
                         >
                             ASK (Demand)
                         </button>

@@ -34,7 +34,7 @@ function App() {
       <HeroSection />
 
       {/* Main Content with Animated Background */}
-      <div className="relative w-full overflow-hidden bg-transparent">
+      <div className="relative w-full overflow-hidden bg-transparent isolate">
         {/* Animated Background Layer */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <FloatingPaths position={1} />
