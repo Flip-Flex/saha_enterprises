@@ -8,7 +8,7 @@ import { DieCastingFeature } from '@/components/ui/die-casting-feature';
 import { ClientNetwork } from '@/components/ui/client-network';
 import { ContactSection } from '@/components/ui/contact-section';
 import { AboutSection } from '@/components/ui/about-section';
-import { FloatingPaths } from '@/components/ui/background-paths';
+
 
 import { NavBar } from '@/components/ui/tubelight-navbar';
 import { Home, User, Briefcase, Layers, Network, Phone } from 'lucide-react';
@@ -34,12 +34,8 @@ function App() {
       <HeroSection />
 
       {/* Main Content with Animated Background */}
-      <div className="relative w-full overflow-hidden bg-transparent isolate">
-        {/* Animated Background Layer */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <FloatingPaths position={1} />
-          <FloatingPaths position={-1} />
-        </div>
+      <div className="relative w-full overflow-hidden bg-transparent">
+
 
         {/* Content Layer */}
         <div className="relative z-10">

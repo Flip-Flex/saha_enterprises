@@ -371,11 +371,30 @@ void main(){gl_Position=position;}`;
       rendererRef.current.updateShader(defaultShaderSource);
     }
 
-    loop(0);
+    // Initialize observer for pausing animation when off-screen
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!animationFrameRef.current) {
+              loop(0);
+            }
+          } else {
+            if (animationFrameRef.current) {
+              cancelAnimationFrame(animationFrameRef.current);
+              animationFrameRef.current = 0;
+            }
+          }
+        });
+      },
+      { threshold: 0 }
+    );
 
+    observer.observe(canvas);
     window.addEventListener('resize', resize);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', resize);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
