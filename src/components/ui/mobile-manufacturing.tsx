@@ -5,8 +5,8 @@ import mobileMfgImage from '@/assets/mobile-manufacturing.png';
 
 export const MobileManufacturing: React.FC = () => {
     return (
-        <section className="py-24 bg-transparent relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="py-16 bg-transparent relative overflow-hidden">
+            <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -19,7 +19,7 @@ export const MobileManufacturing: React.FC = () => {
                         <span className="text-sm font-medium uppercase tracking-wider">Industrial Sector</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
                         Mobile <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">
                             Manufacturing

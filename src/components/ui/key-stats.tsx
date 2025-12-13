@@ -5,15 +5,15 @@ import { CheckCircle2 } from 'lucide-react';
 
 export const KeyStats: React.FC = () => {
     return (
-        <section className="relative w-full bg-transparent py-20 overflow-hidden font-sans border-b border-white/5">
-            <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="relative w-full bg-transparent py-16 overflow-hidden font-sans border-b border-white/5">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
                 <div className="space-y-8">
                     <motion.h2
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent tracking-tight"
+                        className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent tracking-tight"
                     >
                         INTRODUCTION
                     </motion.h2>

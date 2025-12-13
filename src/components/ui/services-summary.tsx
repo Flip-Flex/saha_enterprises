@@ -27,14 +27,14 @@ const services = [
 
 export const ServicesSummary: React.FC = () => {
     return (
-        <section id="services" className="py-24 relative bg-transparent">
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <section id="services" className="py-16 relative bg-transparent">
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                        className="text-2xl md:text-4xl font-bold text-white mb-6"
                     >
                         Our Expertise
                     </motion.h2>

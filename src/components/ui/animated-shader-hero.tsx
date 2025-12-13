@@ -513,17 +513,17 @@ const Hero: React.FC<HeroProps> = ({
         <div className="text-center space-y-6 max-w-5xl mx-auto px-4 pointer-events-auto">
           {/* Main Heading with Animation */}
           <div className="space-y-2">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 bg-clip-text text-transparent animate-fade-in-up animation-delay-200">
               {headline.line1}
             </h1>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400 pb-2">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent animate-fade-in-up animation-delay-400 pb-2">
               {headline.line2}
             </h1>
           </div>
 
           {/* Subtitle with Animation */}
           <div className="max-w-3xl mx-auto animate-fade-in-up animation-delay-600">
-            <p className="text-lg md:text-xl lg:text-2xl text-orange-100/90 font-light leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-orange-100/90 font-light leading-relaxed">
               {subtitle}
             </p>
           </div>

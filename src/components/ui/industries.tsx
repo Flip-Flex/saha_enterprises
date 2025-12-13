@@ -13,8 +13,8 @@ const industries = [
 
 export const Industries: React.FC = () => {
     return (
-        <section id="industries" className="py-24 bg-transparent border-t border-white/5">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="industries" className="py-16 bg-transparent border-t border-white/5">
+            <div className="max-w-6xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export const Industries: React.FC = () => {
                     className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6"
                 >
                     <div className="max-w-2xl">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                        <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
                             Industries We Serve
                         </h2>
                         <p className="text-slate-400 text-lg">

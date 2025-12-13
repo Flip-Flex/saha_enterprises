@@ -5,8 +5,8 @@ import aboutImage from '@/assets/about-team.png';
 
 export const AboutSection: React.FC = () => {
     return (
-        <section id="about" className="py-24 bg-transparent relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section id="about" className="py-16 bg-transparent relative overflow-hidden">
+            <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -51,7 +51,7 @@ export const AboutSection: React.FC = () => {
                         <span className="text-sm font-medium uppercase tracking-wider">About Us</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
                         Bridging the Gap Between <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">
                             Talent & Opportunity

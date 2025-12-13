@@ -4,11 +4,11 @@ import { Quote } from 'lucide-react';
 
 export const SuccessStory: React.FC = () => {
     return (
-        <section className="py-24 relative overflow-hidden bg-transparent">
+        <section className="py-16 relative overflow-hidden bg-transparent">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-orange-900/10 to-red-900/10" />
 
-            <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <div className="max-w-3xl mx-auto px-6 relative z-10 text-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -22,7 +22,7 @@ export const SuccessStory: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-2xl md:text-4xl font-light text-white leading-relaxed mb-10"
+                    className="text-xl md:text-3xl font-light text-white leading-relaxed mb-10"
                 >
                     "Saha Enterprises helped us ramp up our production line workforce in record time. Their vetting process is impeccable and the quality of talent is outstanding."
                 </motion.blockquote>

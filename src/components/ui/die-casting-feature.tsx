@@ -4,7 +4,7 @@ import dieCastingImage from '@/assets/die-casting.png';
 
 export const DieCastingFeature: React.FC = () => {
     return (
-        <section className="relative h-[80vh] flex items-center overflow-hidden bg-black">
+        <section className="relative h-[70vh] flex items-center overflow-hidden bg-black">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -15,14 +15,14 @@ export const DieCastingFeature: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     className="max-w-2xl"
                 >
-                    <h2 className="text-5xl md:text-8xl font-bold text-white mb-6 uppercase tracking-tighter">
+                    <h2 className="text-4xl md:text-7xl font-bold text-white mb-6 uppercase tracking-tighter">
                         Die <br />
                         <span className="text-orange-500">Casting</span> <br />
                         Industry
