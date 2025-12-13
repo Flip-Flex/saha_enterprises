@@ -8,7 +8,7 @@ import { DieCastingFeature } from '@/components/ui/die-casting-feature';
 import { ClientNetwork } from '@/components/ui/client-network';
 import { ContactSection } from '@/components/ui/contact-section';
 import { AboutSection } from '@/components/ui/about-section';
-
+import { EtheralShadow } from '@/components/ui/etheral-shadow';
 
 import { NavBar } from '@/components/ui/tubelight-navbar';
 import { Home, User, Briefcase, Layers, Network, Phone } from 'lucide-react';
@@ -35,7 +35,15 @@ function App() {
 
       {/* Main Content with Animated Background */}
       <div className="relative w-full overflow-hidden bg-transparent">
-
+        <div className="fixed inset-0 top-0 left-0 h-screen w-full z-0 pointer-events-none">
+          <EtheralShadow
+            color="#ea580c" // Using orange to match theme
+            animation={{ scale: 100, speed: 50 }}
+            noise={{ opacity: 0.2, scale: 1.2 }}
+            sizing="fill"
+            className="w-full h-full opacity-30"
+          />
+        </div>
 
         {/* Content Layer */}
         <div className="relative z-10">
@@ -74,7 +82,7 @@ function App() {
 
       {/* Footer */}
       <footer className="py-8 bg-black border-t border-white/10 text-center text-slate-600 text-sm relative z-20">
-        <p>&copy; 2024 Saha Enterprises. All rights reserved.</p>
+        <p>&copy; 2025 FlipFlex. All rights reserved.</p>
       </footer>
     </div>
   );

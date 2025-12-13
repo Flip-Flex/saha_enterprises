@@ -29,9 +29,7 @@ export const Industries: React.FC = () => {
                             Specialized talent acquisition across diverse sectors.
                         </p>
                     </div>
-                    <button className="px-6 py-3 rounded-full border border-white/10 text-white hover:bg-white/5 transition-colors">
-                        View All Sectors
-                    </button>
+
                 </motion.div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

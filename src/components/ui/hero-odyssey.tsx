@@ -24,7 +24,7 @@ export const HeroSection: React.FC = () => {
                 secondary: {
                     text: "View Industries",
                     onClick: () => {
-                        const industriesSection = document.getElementById('industries');
+                        const industriesSection = document.getElementById('sectors');
                         if (industriesSection) industriesSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
