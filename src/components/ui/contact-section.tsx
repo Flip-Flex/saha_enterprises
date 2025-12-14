@@ -1,9 +1,38 @@
-import React from 'react';
-import { Phone, Mail, MapPin, ArrowRight, HeartHandshake } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Phone, Mail, MapPin, ArrowRight, HeartHandshake, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import workersImage from '@/assets/workers.png';
+import emailjs from '@emailjs/browser';
 
 export const ContactSection: React.FC = () => {
+    const form = useRef<HTMLFormElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const sendEmail = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!form.current) return;
+
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        const serviceID = 'service_hbo5kaq';
+        const templateID = 'template_vv2oshi';
+        const publicKey = 'E_-yj9rlLpR5svjm7';
+
+        emailjs.sendForm(serviceID, templateID, form.current, publicKey)
+            .then((result) => {
+                console.log(result.text);
+                setSubmitStatus('success');
+                setIsSubmitting(false);
+                if (form.current) form.current.reset();
+            }, (error) => {
+                console.log(error.text);
+                setSubmitStatus('error');
+                setIsSubmitting(false);
+            });
+    };
+
     return (
         <section id="contact" className="py-24 bg-transparent border-t border-white/5 relative overflow-hidden">
             {/* Background elements */}
@@ -90,29 +119,56 @@ export const ContactSection: React.FC = () => {
 
                         <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Send a Message</h3>
 
-                        <form className="space-y-6 relative z-10">
+                        <form ref={form} onSubmit={sendEmail} className="space-y-6 relative z-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-400 mb-2">First Name</label>
-                                    <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" placeholder="John" />
+                                    <input required name="first_name" type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-400 mb-2">Last Name</label>
-                                    <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" placeholder="Doe" />
+                                    <input required name="last_name" type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" />
                                 </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-400 mb-2">Email Address</label>
-                                <input type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" placeholder="john@example.com" />
+                                <input required name="email" type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-400 mb-2">Message</label>
-                                <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all" placeholder="How can we help you?"></textarea>
+                                <textarea required name="message" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 focus:bg-white/10 transition-all"></textarea>
                             </div>
-                            <button className="w-full py-4 rounded-xl bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-orange-900/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
-                                Send Message
-                                <ArrowRight className="w-5 h-5" />
+
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full py-4 rounded-xl bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold text-lg hover:shadow-lg hover:shadow-orange-900/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        Sending... <Loader2 className="w-5 h-5 animate-spin" />
+                                    </>
+                                ) : (
+                                    <>
+                                        Send Message
+                                        <ArrowRight className="w-5 h-5" />
+                                    </>
+                                )}
                             </button>
+
+                            {submitStatus === 'success' && (
+                                <div className="flex items-center gap-2 text-green-500 text-sm bg-green-500/10 p-3 rounded-lg border border-green-500/20">
+                                    <CheckCircle className="w-4 h-4" />
+                                    Message sent successfully! We'll get back to you soon.
+                                </div>
+                            )}
+
+                            {submitStatus === 'error' && (
+                                <div className="flex items-center gap-2 text-red-500 text-sm bg-red-500/10 p-3 rounded-lg border border-red-500/20">
+                                    <AlertCircle className="w-4 h-4" />
+                                    Failed to send message. Please try again or email us directly.
+                                </div>
+                            )}
                         </form>
                     </motion.div>
                 </div>
